@@ -10,18 +10,18 @@
 \title[DCC performance in IEEE 802.11p] % opzionale
 {On the performance of Decentralized Congestion Control in a real IEEE 802.11p testbed}
 
-\author{Antonio Solida - 178507}
+\author{\textbf{Antonio Solida - 17850}}
 
 \institute[] % opzionale
 {
     \textbf{Relatore: Prof. Carlo Augusto Grazia}
     \and
     Corso di Laurea Magistrale in Ingegneria Informatica\\
-    Curriculum: Cloud \& Cybersecurity\\
-    Esame di Automotive Cybersecurity
+    Percorso "Cloud \& Cybersecurity"\\
+    Esame di Automotive Connectivity
     \and
     Dipartimento di Ingegneria "Enzo Ferrari"\\
-    Università di Modena e Reggio Emilia
+    Università degli studi di Modena e Reggio Emilia
 }
 
 \date[17 ottobre 2024] % opzionale
@@ -81,6 +81,7 @@
 
 \begin{frame}
     \frametitle{Descrizione test}
+    \includegraphics[width=\textwidth]{Rock scheme.png}
 \end{frame}
 
 \begin{frame}
@@ -99,14 +100,19 @@
     \hfill
     \begin{minipage}{0.5\textwidth}
         \centering
-        % Primo grafico
-        \includegraphics[width=\textwidth]{t1_c0_main.png} % Sostituisci con il path del grafico
-        \vspace{1cm}
-        % Secondo grafico
-        \includegraphics[width=\textwidth]{t2_c0_main.png} % Sostituisci con il path del grafico
+        \begin{minipage}{\textwidth}
+            % Primo grafico (Quality of Service assente)
+            \includegraphics[width=\textwidth]{t1_c0_main.png} % Sostituisci con il path del grafico
+            \vspace{0.5cm}
+        \end{minipage}
+        \begin{minipage}{\textwidth}
+            % Secondo grafico (Quality of Service presente)
+            \includegraphics[width=\textwidth]{t2_c0_main.png} % Sostituisci con il path del grafico
+        \end{minipage}
     \end{minipage}
 
 \end{frame}
+
 
 \begin{frame}
     \frametitle{Trasmissione in ambiente parzialmente congestionato}
@@ -144,11 +150,14 @@
     \frametitle{Trasmissione in ambiente totalmente congestionato}
     
     \begin{minipage}{0.45\textwidth}
+        % Quality of Service assente
         \textbf{Quality of Service assente}\\
         \textit{Throughput medio Stream ID 1}: 1.14 Mbps\\
         \textit{Throughput medio Stream ID 2}: 1.19 Mbps\\
+        
         \vspace{1cm}
         
+        % Quality of Service presente
         \textbf{Quality of Service presente}\\
         \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.19 Mbps\\
         \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.30 Mbps\\
@@ -156,14 +165,19 @@
     \hfill
     \begin{minipage}{0.5\textwidth}
         \centering
-        % Primo grafico
-        \includegraphics[width=\textwidth]{t1_c2_main.png} % Sostituisci con il path del grafico
-        \vspace{1cm}
-        % Secondo grafico
-        \includegraphics[width=\textwidth]{t2_c2_main.png} % Sostituisci con il path del grafico
+        \begin{minipage}{\textwidth}
+            % Primo grafico (Quality of Service assente)
+            \includegraphics[width=\textwidth]{t1_c2_main.png} % Sostituisci con il path del grafico
+            \vspace{0.5cm}
+        \end{minipage}
+        \begin{minipage}{\textwidth}
+            % Secondo grafico (Quality of Service presente)
+            \includegraphics[width=\textwidth]{t2_c2_main.png} % Sostituisci con il path del grafico
+        \end{minipage}
     \end{minipage}
 
 \end{frame}
+
 
 \begin{frame}
     \frametitle{COnclusioni test}
