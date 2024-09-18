@@ -1,5 +1,5 @@
 # On the performance of Decentralized Congestion Control in a real IEEE 802.11p testbed
-Master degree thesis exposition in Automotive Connectivity course @ Unimore 2023/24.
+Master degree thesis in Automotive Connectivity course exposition @ Unimore 2023/24.
 
 ## Abstract
 Over the past two decades, road safety has benefited from significant technological advances, particularly through the development of Intelligent Transport Systems (ITS) and Vehicular Ad-hoc Networks (VANETs). This thesis explores the importance of such systems in improving vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication, highlighting the crucial role of standardizing Cooperative Awareness Messages (CAMs) and Decentralized Environmental Notification Messages (DENMs). The implementation of technologies such as Dedicated Short-Range Communication (DSRC) has facilitated the exchange of essential information for Collision Avoidance (CA) applications, helping to reduce traffic accidents.
