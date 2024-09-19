@@ -16,9 +16,9 @@
 {
     \fontsize{11}{13}\selectfont \textbf{Relatore: Prof. Carlo Augusto Grazia}
     \and
+    Esame di Automotive Connectivity\\
     Corso di Laurea Magistrale in Ingegneria Informatica\\
-    Percorso "\textit{Cloud \& Cybersecurity}"\\
-    Esame di Automotive Connectivity
+    Percorso "\textit{Cloud \& Cybersecurity}"
     \and
     Dipartimento di Ingegneria "Enzo Ferrari"\\
     Università degli studi di Modena e Reggio Emilia
@@ -114,10 +114,10 @@
     \frametitle{Test performance flussi TCP}
     Dispositivi suddivisi in due gruppi:
     \centering
-    \includegraphics[width=0.8\textwidth]{Rock scheme.png}
+    \includegraphics[width=0.7\textwidth]{Rock scheme.png}
     \begin{itemize}
         \item \textit{Gruppo "CAM"}: due dispositivi che simuleranno un ambiente in cui sono presenti uno svariato numero di veicoli che porteranno il canale di trasmissione a congestionarsi, in maniera parziale (\textit{un CAM ogni 5 ms}) o completa (\textit{flooding UDP}).
-        \item \textit{Gruppo "Transmission"}: due dispositivi che comunicheranno mediante due flussi TCP in parallelo mediante l'utilizzo del comando iPerf.
+        \item \textit{Gruppo "Transmission"}: due dispositivi che comunicheranno mediante due flussi TCP in parallelo mediante l'utilizzo del comando iPerf. Due casi visti: con e senza QoS.
     \end{itemize}
 \end{frame}
 
@@ -164,8 +164,8 @@
         
         % Quality of Service presente
         \textbf{Quality of Service presente}\\
-        \textit{Throughput medio Stream AC\_VO}: 6.73 Mbps\\
-        \textit{Throughput medio Stream AC\_BK}: 0.77 Mbps\\
+        \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.73 Mbps\\
+        \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.77 Mbps\\
     \end{minipage}
     \hfill
     \begin{minipage}{0.5\textwidth}
@@ -220,16 +220,27 @@
     \frametitle{Considerazioni}
     \centering
     \includegraphics[width=0.9\textwidth]{throughput_bar.png}
-    \begin{alertblock}{Risultati riscontrati}
+    \begin{block}{Risultati riscontrati}
         \begin{itemize}
             \item Maggior throughput nel flusso a priorità maggiore.
             \item Maggiore efficienza nello sfruttamento della banda.
         \end{itemize}
-    \end{alertblock}
+    \end{block}
 \end{frame}
 
 \begin{frame}
     \frametitle{Conclusioni finali}
+
+    \begin{enumerate}
+        \item \textbf{Saturazione del Canale:} In assenza di meccanismi di gestione, il numero crescente di dispositivi può saturare il canale, riducendo la qualità del servizio, soprattutto in scenari urbani.
+
+        \item \textbf{Classi di Priorità:} Implementazione di classi di priorità per i messaggi trasmessi, migliorando l'uso delle risorse di rete e garantendo banda per comunicazioni critiche.
+
+        \item \textbf{Risultati Sperimentali:} L'adozione di code di priorità ha dimostrato di aumentare significativamente la disponibilità di banda e ridurre i tempi di attesa per messaggi critici.
+
+        \item \textbf{Implicazioni Future:} Necessità di valutare l'integrazione di datarate più elevati e modulazioni più efficienti per migliorare le performance di rete.
+    \end{enumerate}
+
 \end{frame}
 
 \begin{frame}
