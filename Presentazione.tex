@@ -33,7 +33,15 @@
 
 \begin{frame}
 \frametitle{Introduzione}
-Le reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) e la \textbf{DSRC} (\textit{Dedicated Short-Range Communication}).
+\centering
+\begin{block}{Keywords}
+    \begin{itemize}
+        \item Reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) \& \textbf{DSRC} (\textit{Dedicated Short-Range Communication}).
+        \item IEEE \textbf{802.11p} \& ETSI \textbf{ITS} (\textit{Intelligent Transport System}).
+        \item \textbf{CAM} (\textit{Community Awareness Message}).
+    \end{itemize}
+\end{block}
+
 \begin{columns}
     % Column 2    
     \begin{column}{0.5\textwidth}
@@ -54,12 +62,34 @@ Le reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) e la \textbf{DSRC} (
 \end{frame}
 
 \begin{frame}
-    \frametitle{Problema della congestione}
+    \frametitle{Problema: congestione del canale}
+    In ambienti con più veicoli, come una strada trafficata, l'accumulo di informazioni trasmesse può portare a una \alert{seria congestione del canale}, compromettendo la comunicazione.
+
+    \begin{block}{Possibili cause}
+        \begin{itemize}
+            \item \textbf{CAM inviati periodicamente:} \\
+            I Cooperative Awareness Messages (CAM) vengono trasmessi in un intervallo di tempo compreso tra 0,1 e 1 secondo.
+            
+            \item \textbf{Invio di DENM:} \\
+            Possibile invio di Decentralized Environmental Notification Messages (DENM) per comunicazioni specifiche.
+            
+            \item \textbf{Altre trasmissioni sulla stessa banda:} \\
+            La presenza di altre comunicazioni e disturbi sulla stessa banda - \textit{5,9 GHz (5,850 - 5,925 GHz)} - può influire sulla qualità del segnale.
+        \end{itemize}
+    \end{block}
+    
 \end{frame}
 
 \begin{frame}
-    \frametitle{DCC con QoS}
+    \frametitle{Soluzione: DCC con Transmit queues?}
+    \centering
+    \includegraphics[width=0.5\textwidth]{dcc_edca.jpg}
+    \begin{itemize}
+        \item \textbf{Decentralized Congestion Control (DCC):} Meccanismo standardizzato dell'ETSI per controllare la congestione; sono stati introdotti parametri aggiuntivi basati sulle categorie di accesso per gestire le diverse priorità e requisiti di latenza delle comunicazioni veicolari (\textit{Access Layer}).
+        \item \textbf{Classificazione del Traffico:} Ogni Access Category è associata a specifiche caratteristiche di traffico, consentendo una gestione più fine delle risorse di comunicazione.
+    \end{itemize}
 \end{frame}
+
 
 \begin{frame}
     \frametitle{Descrizione testbed}
@@ -81,11 +111,12 @@ Le reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) e la \textbf{DSRC} (
 \end{frame}
 
 \begin{frame}
-    \frametitle{Descrizione test effettuati}
+    \frametitle{Test performance flussi TCP}
+    Dispositivi suddivisi in due gruppi:
     \centering
     \includegraphics[width=0.8\textwidth]{Rock scheme.png}
     \begin{itemize}
-        \item \textit{Gruppo "CAM"}: due dispositivi che simuleranno un ambiente in cui sono presenti uno svariato numero di veicoli che porteranno il canale di trasmissione a congestionarsi, in maniera completa o parziale.
+        \item \textit{Gruppo "CAM"}: due dispositivi che simuleranno un ambiente in cui sono presenti uno svariato numero di veicoli che porteranno il canale di trasmissione a congestionarsi, in maniera parziale (\textit{un CAM ogni 5 ms}) o completa (\textit{flooding UDP}).
         \item \textit{Gruppo "Transmission"}: due dispositivi che comunicheranno mediante due flussi TCP in parallelo mediante l'utilizzo del comando iPerf.
     \end{itemize}
 \end{frame}
@@ -133,8 +164,8 @@ Le reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) e la \textbf{DSRC} (
         
         % Quality of Service presente
         \textbf{Quality of Service presente}\\
-        \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.73 Mbps\\
-        \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.77 Mbps\\
+        \textit{Throughput medio Stream AC\_VO}: 6.73 Mbps\\
+        \textit{Throughput medio Stream AC\_BK}: 0.77 Mbps\\
     \end{minipage}
     \hfill
     \begin{minipage}{0.5\textwidth}
@@ -202,7 +233,13 @@ Le reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) e la \textbf{DSRC} (
 \end{frame}
 
 \begin{frame}
-    \frametitle{The end}
+    \frametitle{Grazie per l'attenzione!}
+
+    \begin{center}
+        \textbf{Grazie per l'attenzione!} \\[1em]
+        A disposizione per eventuali domande e dubbi.
+    \end{center}
+
 \end{frame}
 
 \end{document}
