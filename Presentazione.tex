@@ -109,13 +109,15 @@
 
 \begin{frame}
     \frametitle{Test performance flussi TCP}
-    Dispositivi suddivisi in due gruppi:
+    \vfill
     \centering
+    Dispositivi suddivisi in due gruppi:
     \includegraphics[width=0.7\textwidth]{Rock scheme.png}
     \begin{itemize}
-        \item \textit{Gruppo "CAM"}: due dispositivi che simuleranno un ambiente in cui sono presenti uno svariato numero di veicoli che porteranno il canale di trasmissione a congestionarsi, in maniera parziale (\textit{un CAM ogni 5 ms}) o completa (\textit{flooding UDP}).
-        \item \textit{Gruppo "Transmission"}: due dispositivi che comunicheranno mediante due flussi TCP in parallelo mediante l'utilizzo del comando iPerf. Due casi visti: con e senza QoS.
+        \item \textit{Gruppo "CAM"}: due dispositivi che creano congestione (ove previsto).
+        \item \textit{Gruppo "Transmission"}: due dispositivi per la trasmissione delle informazioni.
     \end{itemize}
+    \vfill
 \end{frame}
 
 \begin{frame}
