@@ -33,49 +33,43 @@
 \frame{\titlepage}
 
 \begin{frame}
-\frametitle{Introduzione}
-\centering
-\begin{block}{Keywords}
-    \begin{itemize}
-        \item Reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) \& \textbf{DSRC} (\textit{Dedicated Short-Range Communication}).
-        \item IEEE \textbf{802.11p} \& ETSI \textbf{ITS} (\textit{Intelligent Transport System}).
-        \item \textbf{CAM} (\textit{Community Awareness Message}).
-    \end{itemize}
-\end{block}
-
-\begin{columns}
-    % Column 2    
-    \begin{column}{0.5\textwidth}
-        \begin{figure}[h!]
+    \frametitle{Introduzione}
+    \centering
+    \begin{block}{Keywords}
+        \begin{itemize}
+            \item Reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) \& \textbf{DSRC} (\textit{Dedicated Short-Range Communication})
+            \item IEEE \textbf{802.11p} \& ETSI \textbf{ITS} (\textit{Intelligent Transport System})
+            \item \textbf{CAM} (\textit{Community Awareness Message})
+        \end{itemize}
+    \end{block}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
             \centering
             \includegraphics[width=1\textwidth]{vanet.png}
             \label{fig:vanet}
-        \end{figure}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-        \begin{figure}[h!]
+        \end{column}
+        \begin{column}{0.5\textwidth}
             \centering
             \includegraphics[width=1\textwidth]{routing_vanet.jpeg}
             \label{fig:obu_rsu}
-        \end{figure}
-    \end{column}
-\end{columns}
-\end{frame}
+        \end{column}
+    \end{columns}
+\end{frame}    
 
 \begin{frame}
     \frametitle{Problema: congestione del canale}
     In ambienti con più veicoli, come una strada trafficata, l'accumulo di informazioni trasmesse può portare a una \alert{seria congestione del canale}, compromettendo la comunicazione.
-
+    \vfill
     \begin{block}{Possibili cause}
         \begin{itemize}
-            \item \textbf{CAM inviati periodicamente:} \\
-            I Cooperative Awareness Messages (CAM) vengono trasmessi in un intervallo di tempo compreso tra 0,1 e 1 secondo.
-            
-            \item \textbf{Invio di DENM:} \\
-            Possibile invio di Decentralized Environmental Notification Messages (DENM) per comunicazioni specifiche.
-            
-            \item \textbf{Altre trasmissioni sulla stessa banda:} \\
-            La presenza di altre comunicazioni e disturbi sulla stessa banda - \textit{5,9 GHz (5,850 - 5,925 GHz)} - può influire sulla qualità del segnale.
+            \vspace{5pt}
+            \item {CAM inviati periodicamente}
+            \vspace{5pt}
+            \item {Invio di DENM}
+            \vspace{5pt}
+            \item {Altre trasmissioni sulla stessa banda}
+            \vspace{5pt}
         \end{itemize}
     \end{block}
     
@@ -84,13 +78,16 @@
 \begin{frame}
     \frametitle{Soluzione: DCC con Transmit queues?}
     \centering
+    \vfill
     \includegraphics[width=0.5\textwidth]{dcc_edca.jpg}
+    \vfill
     \begin{itemize}
-        \item \textbf{Decentralized Congestion Control (DCC):} Meccanismo standardizzato dell'ETSI per controllare la congestione; sono stati introdotti parametri aggiuntivi basati sulle categorie di accesso per gestire le diverse priorità e requisiti di latenza delle comunicazioni veicolari (\textit{Access Layer}).
-        \item \textbf{Classificazione del Traffico:} Ogni Access Category è associata a specifiche caratteristiche di traffico, consentendo una gestione più fine delle risorse di comunicazione.
+        \item \textbf{Decentralized Congestion Control (DCC)}
+        \vspace{15pt}
+        \item \textbf{Classificazione del Traffico}
     \end{itemize}
+    \vfill
 \end{frame}
-
 
 \begin{frame}
     \frametitle{Descrizione testbed}
