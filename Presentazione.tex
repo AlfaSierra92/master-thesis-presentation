@@ -6,6 +6,7 @@
 \graphicspath{ {./images/} }
 \usepackage{fancybox}
 \setbeamertemplate{navigation symbols}{}
+\usepackage{verbatim} % for multirow comments
 
 % Informazioni da includere nella pagina del titolo:
 \title[DCC performance in IEEE 802.11p] % opzionale
@@ -227,6 +228,7 @@
     \end{block}
 \end{frame}
 
+\begin{comment}
 \begin{frame}
     \frametitle{Conclusioni finali}
 
@@ -238,6 +240,24 @@
         \item \textbf{Risultati Sperimentali:} L'adozione di code di priorità ha dimostrato di aumentare significativamente la disponibilità di banda e ridurre i tempi di attesa per messaggi critici.
 
         \item \textbf{Implicazioni Future:} Necessità di valutare l'integrazione di datarate più elevati e modulazioni più efficienti per migliorare le performance di rete.
+    \end{enumerate}
+
+\end{frame}
+\end{comment}
+
+\begin{frame}
+    \frametitle{Conclusioni finali}
+
+    \begin{enumerate}
+        \vspace{5pt}
+        \item \textbf{Saturazione del Canale:} Crescita dei dispositivi = riduzione della qualità del servizio, specialmente in aree urbane.
+        \vspace{5pt}
+        \item \textbf{Classi di Priorità:} Implementazione del QoS per migliorare l'uso della rete e garantire banda per messaggi critici.
+        \vspace{5pt}
+        \item \textbf{Risultati Sperimentali:} Le code di priorità aumentano la disponibilità di banda e riducono i tempi di attesa.
+        \vspace{5pt}
+        \item \textbf{Implicazioni Future:} Esplorare l'integrazione di datarate e modulazioni più efficienti per migliorare le performance di rete.
+        \vspace{5pt}
     \end{enumerate}
 
 \end{frame}
