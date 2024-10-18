@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usetheme{Madrid}
 % Abilita il supporto alle immagini
 \usepackage{graphicx}
@@ -16,6 +16,7 @@
 
 \institute[] % opzionale
 {
+    \vspace{-1em}
     \fontsize{11}{13}\selectfont \textbf{Relatore: Prof. Carlo Augusto Grazia}
     \and
     Esame di Automotive Connectivity\\
@@ -36,6 +37,7 @@
 \begin{frame}
     \frametitle{Introduzione}
     \centering
+    \vspace{-1em} % Riduce lo spazio sopra il blocco
     \begin{block}{Keywords}
         \begin{itemize}
             \item Reti \textbf{VANET} (\textit{Vehicular Ad-Hoc Networks}) \& \textbf{DSRC} (\textit{Dedicated Short-Range Communication})
@@ -47,12 +49,12 @@
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \centering
-            \includegraphics[width=1\textwidth]{vanet.png}
+            \includegraphics[width=0.7\textwidth]{vanet.png}
             \label{fig:vanet}
         \end{column}
         \begin{column}{0.5\textwidth}
             \centering
-            \includegraphics[width=1\textwidth]{routing_vanet.jpeg}
+            \includegraphics[width=0.9\textwidth]{routing_vanet.jpeg}
             \label{fig:obu_rsu}
         \end{column}
     \end{columns}
@@ -108,7 +110,7 @@
         \includegraphics[width=\textwidth]{ROCK_3A.png}
         \vspace{0.5cm}
         % Immagine del laptop
-        \includegraphics[width=\textwidth]{topology_photo.jpg}
+        \includegraphics[width=0.8\textwidth]{topology_photo.jpg}
     \end{minipage}
 \end{frame}
 
@@ -116,114 +118,123 @@
     \frametitle{Test performance flussi TCP}
     \vfill
     \centering
-    Dispositivi suddivisi in due gruppi:
-    \includegraphics[width=0.7\textwidth]{Rock scheme.png}
-    \begin{itemize}
-        \item \textit{Gruppo "CAM"}: due dispositivi che creano congestione (ove previsto).
-        \item \textit{Gruppo "Transmission"}: due dispositivi per la trasmissione delle informazioni.
-    \end{itemize}
+    \begin{minipage}{0.9\textwidth}
+        \centering
+        Dispositivi suddivisi in due gruppi:
+        \includegraphics[width=0.7\textwidth]{Rock scheme.png}
+        \begin{itemize}
+            \item \textit{Gruppo "CAM"}: due dispositivi che creano congestione (ove previsto).
+            \item \textit{Gruppo "Transmission"}: due dispositivi per la trasmissione delle informazioni.
+        \end{itemize}
+    \end{minipage}
     \vfill
 \end{frame}
 
 \begin{frame}
     \frametitle{Trasmissione in ambiente non congestionato}
-    
-    \begin{minipage}{0.45\textwidth}
-        \textbf{Quality of Service assente}\\
-        \textit{Throughput medio Stream ID 1}: 3.49 Mbps\\
-        \textit{Throughput medio Stream ID 2}: 3.47 Mbps\\
-        \vspace{1cm}
-        
-        \textbf{Quality of Service presente}\\
-        \textit{Throughput medio Stream ID 1 (AC\_VO)}: 7.96 Mbps\\
-        \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.61 Mbps\\
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \begin{minipage}{\textwidth}
-            % Primo grafico (Quality of Service assente)
-            \includegraphics[width=\textwidth]{t1_c0_main.png}
-            \vspace{0.5cm}
+    \centering
+    \hspace{0.05\textwidth} % Aggiungi spazio vuoto sulla sinistra
+    \begin{minipage}{0.9\textwidth}
+        \begin{minipage}{0.45\textwidth}
+            \textbf{Quality of Service assente}\\
+            \textit{Throughput medio Stream ID 1}: 3.49 Mbps\\
+            \textit{Throughput medio Stream ID 2}: 3.47 Mbps\\
+            \vspace{1cm}
+            
+            \textbf{Quality of Service presente}\\
+            \textit{Throughput medio Stream ID 1 (AC\_VO)}: 7.96 Mbps\\
+            \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.61 Mbps\\
         \end{minipage}
-        \begin{minipage}{\textwidth}
-            % Secondo grafico (Quality of Service presente)
-            \includegraphics[width=\textwidth]{t2_c0_main.png}
+        \hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \begin{minipage}{\textwidth}
+                % Primo grafico (Quality of Service assente)
+                \includegraphics[width=0.9\textwidth]{t1_c0_main.png}
+                \vspace{0.5cm}
+            \end{minipage}
+            \begin{minipage}{\textwidth}
+                % Secondo grafico (Quality of Service presente)
+                \includegraphics[width=0.9\textwidth]{t2_c0_main.png}
+            \end{minipage}
         \end{minipage}
     \end{minipage}
-
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Trasmissione in ambiente parzialmente congestionato}
-    
-    \begin{minipage}{0.45\textwidth}
-        % Quality of Service assente
-        \textbf{Quality of Service assente}\\
-        \textit{Throughput medio Stream ID 1}: 3.13 Mbps\\
-        \textit{Throughput medio Stream ID 2}: 3.13 Mbps\\
-        
-        \vspace{1cm}
-        
-        % Quality of Service presente
-        \textbf{Quality of Service presente}\\
-        \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.73 Mbps\\
-        \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.77 Mbps\\
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \begin{minipage}{\textwidth}
-            % Primo grafico (Quality of Service assente)
-            \includegraphics[width=\textwidth]{t1_c1_main.png}
-            \vspace{0.5cm}
+    \centering
+    \hspace{0.05\textwidth} % Aggiungi spazio vuoto sulla sinistra
+    \begin{minipage}{0.9\textwidth}
+        \begin{minipage}{0.45\textwidth}
+            % Quality of Service assente
+            \textbf{Quality of Service assente}\\
+            \textit{Throughput medio Stream ID 1}: 3.13 Mbps\\
+            \textit{Throughput medio Stream ID 2}: 3.13 Mbps\\
+            
+            \vspace{1cm}
+            
+            % Quality of Service presente
+            \textbf{Quality of Service presente}\\
+            \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.73 Mbps\\
+            \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.77 Mbps\\
         \end{minipage}
-        \begin{minipage}{\textwidth}
-            % Secondo grafico (Quality of Service presente)
-            \includegraphics[width=\textwidth]{t2_c1_main.png}
+        \hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \begin{minipage}{\textwidth}
+                % Primo grafico (Quality of Service assente)
+                \includegraphics[width=0.9\textwidth]{t1_c1_main.png}
+                \vspace{0.5cm}
+            \end{minipage}
+            \begin{minipage}{\textwidth}
+                % Secondo grafico (Quality of Service presente)
+                \includegraphics[width=0.9\textwidth]{t2_c1_main.png}
+            \end{minipage}
         \end{minipage}
     \end{minipage}
-
 \end{frame}
 
 \begin{frame}
     \frametitle{Trasmissione in ambiente totalmente congestionato}
-    
-    \begin{minipage}{0.45\textwidth}
-        % Quality of Service assente
-        \textbf{Quality of Service assente}\\
-        \textit{Throughput medio Stream ID 1}: 1.14 Mbps\\
-        \textit{Throughput medio Stream ID 2}: 1.19 Mbps\\
-        
-        \vspace{1cm}
-        
-        % Quality of Service presente
-        \textbf{Quality of Service presente}\\
-        \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.19 Mbps\\
-        \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.30 Mbps\\
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \begin{minipage}{\textwidth}
-            % Primo grafico (Quality of Service assente)
-            \includegraphics[width=\textwidth]{t1_c2_main.png}
-            \vspace{0.5cm}
+    \centering
+    \hspace{0.05\textwidth} % Aggiungi spazio vuoto sulla sinistra
+    \begin{minipage}{0.9\textwidth}
+        \begin{minipage}{0.45\textwidth}
+            % Quality of Service assente
+            \textbf{Quality of Service assente}\\
+            \textit{Throughput medio Stream ID 1}: 1.14 Mbps\\
+            \textit{Throughput medio Stream ID 2}: 1.19 Mbps\\
+            
+            \vspace{1cm}
+            
+            % Quality of Service presente
+            \textbf{Quality of Service presente}\\
+            \textit{Throughput medio Stream ID 1 (AC\_VO)}: 6.19 Mbps\\
+            \textit{Throughput medio Stream ID 2 (AC\_BK)}: 0.30 Mbps\\
         \end{minipage}
-        \begin{minipage}{\textwidth}
-            % Secondo grafico (Quality of Service presente)
-            \includegraphics[width=\textwidth]{t2_c2_main.png}
+        \hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \begin{minipage}{\textwidth}
+                % Primo grafico (Quality of Service assente)
+                \includegraphics[width=0.9\textwidth]{t1_c2_main.png}
+                \vspace{0.5cm}
+            \end{minipage}
+            \begin{minipage}{\textwidth}
+                % Secondo grafico (Quality of Service presente)
+                \includegraphics[width=0.9\textwidth]{t2_c2_main.png}
+            \end{minipage}
         \end{minipage}
     \end{minipage}
-
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Considerazioni}
     \centering
-    \includegraphics[width=0.9\textwidth]{throughput_bar.png}
+    \includegraphics[width=0.7\textwidth]{throughput_bar.png}
     \begin{block}{Risultati riscontrati}
         \begin{itemize}
             \item Maggior throughput nel flusso a priorità maggiore.
